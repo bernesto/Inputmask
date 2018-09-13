@@ -2237,6 +2237,7 @@
                         value = (e && e.detail) ? e.detail[0] : arguments[1],
                         value = value || input.inputmask._valueGet(true);
 
+                    if(typeof value === "object") return;
                     if ($.isFunction(opts.onBeforeMask)) value = opts.onBeforeMask.call(inputmask, value, opts) || value;
                     value = value.split("");
                     checkVal(input, true, false, value);
